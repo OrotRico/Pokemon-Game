@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF" />
+    <title>POKEMON KORIKS</title>
+    <link rel="stylesheet" href="gamedesign.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Honk:MORF@25&display=swap"
+      rel="stylesheet"
+    />
+
+    />
+  </head>
+  <body>
+    <audio id="bgm" autoplay loop>
+      <source src="gameassets/zinnia-battle-music-hq.mp3" type="audio/mpeg" />
+    </audio>
+    <div class="container">
+      <h1 id="gameTitle">POKEMON KORIKS</h1>
+      <a href="#gameModal" id="startLink">Start Game</a>
+    </div>
+    <!--Enter your Name-->>
+    <div class="modal" id="gameModal">
+      <div class="modal-inner">
+        <p>Enter you name</p>
+        <input type="text" id="playerName" placeholder="Your name here" />
+        <button id="backBtn">Back</button>
+        <button id="registerBtn">Register</button>
+      </div>
+    </div>
+    <!--Select your Gender-->
+    <div class="genderSelection hidden" id="gameGenderSelection">
+      <div class="secondModal">
+        <p>Are you a Boy or a Girl?</p>
+        <div>
+          <button id="girlBtn" aria-label="Select Girl">
+            <img src="gameassets/fmimg.png" alt="Girl" />
+          </button>
+          <button id="boyBtn" aria-label="Select Boy">
+            <img src="gameassets/mimg.png" alt="Boy" />
+          </button>
+        </div>
+      </div>
+      <button id="backBtn2">Back</button>
+    </div>
+    <script src="gamescript.js"></script>
+  </body>
+</html>

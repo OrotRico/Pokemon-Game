@@ -1,0 +1,92 @@
+body {
+  background-image: url(gameassets/PKMNWallpaper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+}
+
+#gameTitle {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MORF" 25, "SHLN" 50;
+  font-size: 9rem;
+}
+
+#startLink {
+  text-decoration: none;
+  font-size: 4rem;
+
+  transition: opacity 1s ease-in-out;
+}
+
+.container,
+.modal {
+  transition: opacity 0.5s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 10;
+}
+
+.modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  display: block; /* Keep this unless you're using display toggling */
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.hidden {
+  display: none;
+}
+
+.secondModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.secondModal img {
+  size: 10px;
+}
+
+.genderSelection img {
+  cursor: pointer;
+}
