@@ -31,19 +31,32 @@
       </div>
     </div>
     <!--Select your Gender-->
-    <div class="genderSelection hidden" id="gameGenderSelection">
+    <div class="pokemonSelection hidden" id="pokemonSelection">
       <div class="secondModal">
-        <p>Are you a Boy or a Girl?</p>
+        <p>Choose your Pokemon!</p>
         <div>
-          <button id="girlBtn" aria-label="Select Girl">
-            <img src="gameassets/fmimg.png" alt="Girl" />
+          <button id="totodileBtn" aria-label="Totodile">
+            <img src="gameassets/totodile.png" alt="Totodile" />
           </button>
-          <button id="boyBtn" aria-label="Select Boy">
-            <img src="gameassets/mimg.png" alt="Boy" />
+          <button id="cyndaquilBtn" aria-label="Cyndaquil">
+            <img src="gameassets/cyndaquil.png" alt="Cyndaquil" />
+          </button>
+          <button id="chikoritaBtn" aria-label="Chikorita">
+            <img src="gameassets/chikorita.png" alt="Chikorita" />
           </button>
         </div>
       </div>
       <button id="backBtn2">Back</button>
+    </div>
+    <div class="pokemonConfirmation hidden" id="pokemonConfirmation">
+      <div class="confirmationModal">
+        <p id="confirmationText"></p>
+        <img id="confirmationImage" src="" alt="Selected Pokémon" />
+        <div class="confirmationButtons">
+          <button id="confirmBtn">Confirm</button>
+          <button id="cancelBtn">Back</button>
+        </div>
+      </div>
     </div>
     <script src="gamescript.js"></script>
   </body>

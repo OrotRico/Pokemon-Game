@@ -87,6 +87,22 @@ body {
   size: 10px;
 }
 
-.genderSelection img {
+.pokemonSelection img {
   cursor: pointer;
+
+  size: 5rem;
+}
+
+button img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+
+#confirmationImage {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 10px auto;
+  display: block;
 }

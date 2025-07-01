@@ -39,32 +39,81 @@ document.addEventListener("DOMContentLoaded", () => {
   backBtn.addEventListener("click", () => {
     modal.classList.remove("show"); // fade out modal
     container.classList.remove("hidden"); // fade in title screen
-    genderSelection.classList.add("hidden");
+    pokemonSelection.classList.add("hidden");
 
     clickSfx.currentTime = 0; // rewind in case of rapid clicks
     clickSfx.play().catch((_) => {});
   });
 
-  const genderSelection = document.getElementById("gameGenderSelection");
-  const girlImg = document.querySelector('.genderSelection img[alt="Girl"]');
-  const boyImg = document.querySelector('.genderSelection img[alt="Boy"]');
+  const pokemonSelection = document.getElementById("pokemonSelection");
+  const totodileImg = document.querySelector(
+    '.pokemonSelection img[alt="Totodile"]'
+  );
+  const cyndaquilImg = document.querySelector(
+    '.pokemonSelection img[alt="Cyndaquil"]'
+  );
+  const chikoritaImg = document.querySelector(
+    '.pokemonSelection img[alt="Chikorita"]'
+  );
   const backBtn2 = document.getElementById("backBtn2");
 
   registerBtn.addEventListener("click", () => {
     modal.classList.remove("show");
     modal.classList.add("hidden");
-    genderSelection.classList.remove("hidden");
+    pokemonSelection.classList.remove("hidden");
 
     clickSfx.currentTime = 0;
     clickSfx.play().catch((_) => {});
   });
 
   backBtn2.addEventListener("click", () => {
-    genderSelection.classList.add("hidden");
+    pokemonSelection.classList.add("hidden");
     modal.classList.remove("hidden");
     modal.classList.add("show");
 
     clickSfx.currentTime = 0;
     clickSfx.play().catch((_) => {});
+  });
+
+  const pokemonButtons = document.querySelectorAll(
+    "#totodileBtn, #cyndaquilBtn, #chikoritaBtn"
+  );
+  const pkmnSelection = document.getElementById("pokemonSelection");
+  const pokemonConfirmation = document.getElementById("pokemonConfirmation");
+  const confirmationText = document.getElementById("confirmationText");
+  const confirmationImage = document.getElementById("confirmationImage");
+  const confirmBtn = document.getElementById("confirmBtn");
+  const cancelBtn = document.getElementById("cancelBtn");
+
+  let selectedPokemon = null;
+  let selectedImage = null;
+
+  pokemonButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      selectedPokemon = button.getAttribute("aria-label"); // Get the name
+      confirmationText.textContent = `Are you sure you want to choose ${selectedPokemon}?`;
+      selectedImage = button.querySelector("img").getAttribute("src");
+
+      confirmationText.textContent = `Are you sure you want to choose ${selectedPokemon}?`;
+      confirmationImage.setAttribute("src", selectedImage);
+      confirmationImage.setAttribute("alt", selectedPokemon);
+
+      // Hide selection, show confirmation
+      pkmnSelection.classList.add("hidden");
+      pokemonConfirmation.classList.remove("hidden");
+    });
+  });
+
+  // Cancel button
+  cancelBtn.addEventListener("click", () => {
+    pokemonConfirmation.classList.add("hidden");
+    pkmnSelection.classList.remove("hidden");
+  });
+
+  // Confirm button
+  confirmBtn.addEventListener("click", () => {
+    alert(`You chose ${selectedPokemon}!`);
+    // Proceed with game logic or hide all modals
+    pokemonConfirmation.classList.add("hidden");
   });
 });
